@@ -1,0 +1,37 @@
+{
+  "name": "graphql-server-playground",
+  "version": "1.0.0",
+  "description": "Create a graphQL Server using node and mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony src/server/index.js",
+    "client": "node src/client/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node --harmony ./seed"
+  },
+  "author": "Luca",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^5.6.14",
+    "babel-core": "^5.6.15",
+    "co": "^4.5.4",
+    "co-body": "^2.0.0",
+    "debug": "^2.2.0",
+    "graphql": "^0.2.4",
+    "koa": "^0.21.0",
+    "koa-qs": "^2.0.0",
+    "koa-router": "^5.1.1",
+    "mongoose": "^4.0.6",
+    "superagent": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "co-mocha": "^1.1.2",
+    "co-supertest": "0.0.10",
+    "mocha": "^2.2.5",
+    "mongodb": "^2.0.42",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^1.0.1"
+  }
+}
