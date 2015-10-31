@@ -7,6 +7,8 @@ var weaponName = 'Ultima weapon';
 var petName = 'Agastya';
 var petType = 'Dragon';
 
+queryHero(heroId);
+
 request
   .post('http://localhost:3000/data')
   .send({
