@@ -142,10 +142,10 @@ var schema = new GraphQLSchema({
 				resolve: (obj, {id, weaponId}, source, fieldASTs) => co(function*() {
 					var projections = getProjection(fieldASTs);
 					yield Weapon.update({
-						_id: id
+						_id: weaponId
 					}, {
 						$set: {
-							owner: weaponId 
+							owner: id 
 						}
 					});
 					yield Hero.update({
