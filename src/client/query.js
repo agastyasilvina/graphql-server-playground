@@ -20,7 +20,6 @@ request
     }`
   })
   .end(function (err, res) {
-    console.dir(res.body);
     debug(err || res.body);
     debug('owner', res.body.data.weapon.owner);
   });
@@ -46,9 +45,10 @@ request
     }`
   })
   .end(function (err, res) {
-    console.dir(res.body);
     debug(err || res.body);
     debug('friends', res.body.data.hero.friends);
-    debug('friends', res.body.data.hero.pets);
-    debug('friends', res.body.data.hero.weapon);
+    debug('pets', res.body.data.hero.pets);
+    debug('weapon', res.body.data.hero.weapon);
   });
+
+

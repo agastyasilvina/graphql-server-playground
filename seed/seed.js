@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import Hero from '../src/server/hero';
-import Pet from '../src/server/pet';
-import Weapon from '../src/server/weapon';
+import Hero from '../src/server/collections/hero';
+import Pet from '../src/server/collections/pet';
+import Weapon from '../src/server/collections/weapon';
 
 
 //connect to mongo
@@ -37,7 +37,6 @@ var heros = [
 		_id: '559645cd1a38532d14349244',
 		name: 'Juliana',
 		friends: ['559645cd1a38532d14349243'],
-		pets: ['559645cd1a38532d14349241']
 	},
 	{
 		_id: '559645cd1a38532d14349245',

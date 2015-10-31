@@ -35,7 +35,20 @@ routes.get('/data', function* () {
   this.body = resp;
 });
 
+routes.post('/data', function* () {
+  var payload = yield parseBody(this);
+  var resp = yield graphql(schema, payload.query, '', payload.params);
 
+  if (resp.errors) {
+    this.status = 400;
+    this.body = {
+      errors: resp.errors
+    };
+    return;
+  }
+
+  this.body = resp;
+});
 
 app.use(routes.middleware());
 

@@ -8,8 +8,8 @@ import {
 } from 'graphql/type';
 
 import co from 'co';
-import Hero from '../hero';
-import Weapon from '../weapon';
+import Hero from '../collections/hero';
+import Weapon from '../collections/weapon';
 import heroType from './heroSchema';
 import getProjection from '../util/projection';
 

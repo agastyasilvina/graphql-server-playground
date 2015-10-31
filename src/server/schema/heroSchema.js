@@ -8,9 +8,9 @@ import {
 } from 'graphql/type';
 
 import co from 'co';
-import Hero from '../hero';
-import Pet from '../pet';
-import Weapon from '../weapon';
+import Hero from '../collections/hero';
+import Pet from '../collections/pet';
+import Weapon from '../collections/weapon';
 import weaponType from './weaponSchema';
 import petType from './petSchema';
 import getProjection from '../util/projection';

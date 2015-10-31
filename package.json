@@ -23,15 +23,5 @@
     "koa-router": "^5.1.1",
     "mongoose": "^4.0.6",
     "superagent": "^1.2.0"
-  },
-  "devDependencies": {
-    "chai": "^3.0.0",
-    "co-mocha": "^1.1.2",
-    "co-supertest": "0.0.10",
-    "mocha": "^2.2.5",
-    "mongodb": "^2.0.42",
-    "sinon": "^1.15.4",
-    "sinon-chai": "^2.8.0",
-    "supertest": "^1.0.1"
   }
 }
