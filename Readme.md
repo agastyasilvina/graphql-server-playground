@@ -28,3 +28,4 @@ Once the server is up and running, we run the client:
 npm run client
 ```
 
+Adding the npm run for debugging using node inspector
