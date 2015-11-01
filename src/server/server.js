@@ -7,6 +7,7 @@ import {graphql} from 'graphql';
 import schema from './schema';
 import Debug from 'debug';
 var debug = new Debug('server:');
+import { HeroOfflineSchema } from './heroOfflineSchema.js';
 
 
 let port = process.env.PORT || 3000;
@@ -24,6 +25,22 @@ routes.get('/data', function* () {
   var params = this.query.params;
 
   var resp = yield graphql(schema, query, '', params);
+
+  if (resp.errors) {
+    this.status = 400;
+    this.body = {
+      errors: resp.errors
+    };
+    return;
+  }
+  this.body = resp;
+});
+
+routes.get('/heroOffline', function* () {
+  var query = this.query.query;
+  var params = this.query.params;
+  console.log(query);
+  var resp = yield graphql(HeroOfflineSchema, query);
 
   if (resp.errors) {
     this.status = 400;

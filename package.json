@@ -7,7 +7,8 @@
     "start": "node --harmony src/server/index.js",
     "client": "node src/client/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node --harmony ./seed"
+    "seed": "node --harmony ./seed",
+    "debug-cli": "node-debug src/client/index.js"
   },
   "author": "Luca",
   "license": "ISC",
