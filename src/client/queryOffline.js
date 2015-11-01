@@ -4,6 +4,7 @@ import Debug from 'debug';
 var debug = new Debug('client:query');
 var heroId = '100';
 var summonId = '201';
+var util = require('util');
 
 request
   .get('http://localhost:3000/heroOffline')
@@ -27,7 +28,7 @@ request
   .get('http://localhost:3000/heroOffline')
   .query({
     query: `        
-      query FetchLuke {
+      query FetchLukeJin {
           luke: human(id: "100"){
             id
             name
@@ -37,19 +38,23 @@ request
             skills
           }
           jin: human(id: "101"){
-            id
-            name
-            friends {
-              name
-            }
-            skills
+            ...standardList
           }
-        }`
+        }
+      #try to use fragment:
+      fragment standardList on Human {
+        id
+        name
+        friends {
+          name
+        }
+        skills
+        job
+      }`
   })
   .end(function (err, res) {
-    console.dir(res.body.data);
-    debug(err || res.body.data.luke.friends);
-    debug(err || res.body.data.jin.friends);
+    console.log("Fetch Luke and Jin's data using Fragment:");
+    console.log(util.inspect(res.body.data, false, null));
   });
 
 //Using Human Fragment:

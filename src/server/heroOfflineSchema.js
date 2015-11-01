@@ -216,6 +216,13 @@ var summonType = new GraphQLObjectType({
 });
 
 //The Query type:
+/*
+type Query {
+	hero(skill: Skill): Character
+	human(id: String!): Human
+	summon(id: String!): Summon
+}
+*/
 var queryType = new GraphQLObjectType({
 	name: 'Query',
 	fields: () => ({

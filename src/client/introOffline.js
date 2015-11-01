@@ -77,3 +77,28 @@ request
     //Printing out the variable until the deepest object... 
     console.log(util.inspect(res.body.data, false, null));
   });
+
+/*
+Observing the type human: 
+*/
+
+request
+  .get('http://localhost:3000/heroOffline')
+  .query({
+    query: `        
+    query IntrospectionSummonFieldsQuery {
+      __type(name: "Summon") {
+        name
+        fields {
+          name
+          type {
+            name
+            kind
+          }
+        }
+      }
+    }`
+  })
+  .end(function (err, res) {
+    console.log(util.inspect(res.body.data, false, null));
+  });

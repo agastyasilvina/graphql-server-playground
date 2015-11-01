@@ -7,4 +7,5 @@ debug.enable('client*');
 //require('./mutation');
 
 //require('./queryOffline');
-require('./introOffline');
+//require('./introOffline');
+require('./introsPlayground');
